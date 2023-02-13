@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>NWI School</title>
+  <link rel="stylesheet" type="text/css" href="formstyle.ccs" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1 {
+      font-family: "Raleway", Arial, sans-serif
+    }
+
+    h1 {
+      letter-spacing: 6px
+    }
+
+    .w3-row-padding img {
+      margin-bottom: 12px
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-content" style="max-width:1500px">
+
+    <!-- Header -->
+    <header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
+      <h1 class="w3-xlarge">New World Internatoinal</h1>
+      <h1>School</h1>
+
+      <div class="w3-padding-32">
+        <div class="w3-bar w3-border">
+          <a href="#" class="w3-bar-item w3-button">Home</a>
+          <a href="form.html" class="w3-bar-item w3-button w3-light-grey">form</a>
+          <a href="Login.html" class="w3-bar-item w3-button">Login</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Photo Grid -->
+    <center>
+    <div class="w3-row-padding w3-grayscale" style="margin-bottom:128px">
+      <table>
+        <td>
+          <img src="pexels-emily-ranquist-1205651.jpg" style="width:500px">
+        </td>
+        <td>
+          <img src="pexels-pixabay-269077.jpg" style="width:500px">
+        </td>
+        <td>
+          <img src="pexels-tom-fisk-3195186.jpg" style="width:500px">
+        </td>
+      </table>
+      </center>
+        
+       
+        
+
+
+
+      </div>
+
+      <!-- End Page Content -->
+    </div>
+
+
+    <h1 align="center">Lecturers</h1>
+
+    <table align="center" border="1px" style="color: black; width: 100%;" class="Lecturers">
+      <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Course</th>
+      </tr>
+      <tr>
+        <td>Usaid ALBalushi</td>
+        <td>OOOREDOO</td>
+        <td>Networking</td>
+      </tr>
+      <tr>
+        <td>Nidhal ALmamari</td>
+        <td>SQU</td>
+        <td>Managment</td>
+      </tr>
+      <tr>
+        <td>Jacob</td>
+        <td>OmanTel</td>
+        <td>Java</td>
+      </tr>
+      <tr>
+        <td>Wael </td>
+        <td>Huawie</td>
+        <td>Python</td>
+      </tr>
+    </table>
+ 
+<br><br>
+
+<h1 align="center">Contacts</h1>
+
+
+        <table align="center" border="1px" style="color: black; width: 100%;" class="Contacts" id="Contacts">
+          <tr> <th> Full Name </th> <th> phone number </th> <th> Email </th> </tr>
+            </table>
+
+      
+
+           
+               
+              
+ 
+  <script>
+    const api_url = "https://randomuser.me/api/";
+    async function getUser() {
+      for (i = 0; i < 10; i++) {
+        document.getElementById("Contacts").innerHTML += "<table>  <tr> <td> <span id=\"fullname"+i+"\"> </span> </td> <td> <span id=\"phone"+i+"\"> </span> </td> <td> <span id=\"email"+i+"\"></span></td> </tr></table>";
+      }
+      for (i = 0; i < 10; i++) {
+        //making a call to API
+        const response = await fetch(api_url);
+        // converting it to JSON format
+        const data = await response.json();
+        // getting data/information from JSON
+        const user = data.results[0];
+        let { first, last } = user.name;
+        let { email, phone } = user;
+        let fullName = first + " " + last;
+        // getting access to the span container
+        document.querySelector("#fullname"+i).textContent = fullName;
+        document.querySelector("#phone"+i).textContent = phone;
+        document.querySelector("#email"+i).textContent = email;
+      }
+    }
+    getUser();
+
+  </script>
+<br><br><br><br>
+</body>
+
+</html>

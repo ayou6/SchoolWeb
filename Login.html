@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> W Internatoinal School</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script>
+            function validateForm() {
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+                if (email == "") {
+                    alert("Email address must be filled out");
+                    return false;
+                }
+
+                if (password == "") {
+                    alert("Password must be filled out");
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+
+    </head>
+    <body>
+        
+        <div class="login">
+            <h1>NWI School</h1>    
+            <form >
+
+                    <div class="form-group">
+                        <label for="Email">Email Address</label>
+                        <br>
+                        <input type="email" id="email">
+                        <br>
+                        <br>
+
+                    </div>
+                    
+                    <div class=" form-group">
+                        <label for="password">Password</label>
+                        <br>
+
+                        <input type="password" id="password">
+                        <br><br>
+                        
+                    </div>
+                    <div class="form-group-form-check">
+                        <input class="checkbox" type="checkbox" id="check">
+                        <label class="checkbox" for="check">Remember me </label>
+                    </div>
+
+                    <input class="submit" type="Submit" value="Sign In">
+                    <input class="submit" type="Submit" value="Register">    
+            </form>
+        </div>
+        <div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+         </div>
+
+    </body>
+</html>
