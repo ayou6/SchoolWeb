@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="uni.css" />
+            <div>
+                <img src="utasaidintity-png.png" style="width:200px"
+            </div>
+    </head>
+<body>
+    <div class="topnav">
+        <input class="submit" type="Submit" value="Home">
+      </div>
+
+      <h1 style="font-size: medium;" align="center">Details Form:</h1>
+
+  <br><br>
+  
+
+  
+  
+          <table align="center" border="1px" style="color: black; width: 100%;" class="details" id="details">
+            <tr> <th> University Name </th> <th> Country</th> <th> Country Code </th> <th> Website </th></tr>
+              </table>
+  
+        
+  
+             
+                 
+                
+   
+    <script>
+      const api_url = "http://universities.hipolabs.com/search?country=United+States";
+      async function getUser() {
+        for (i = 0; i < 30; i++) {
+          document.getElementById("details").innerHTML += "<table>  <tr> <td> <span id=\"name"+i+"\"> </span> </td> <td> <span id=\"country"+i+"\"> </span> </td> <td> <span id=\"alpha_two_code"+i+"\"></span></td> <td> <span id=\"web_pages"+i+"\"> </span> </td></tr></table>";
+        }
+        for (i = 0; i < 30; i++) {
+          //making a call to API
+          const response = await fetch(api_url);
+          // converting it to JSON format
+          const data = await response.json();
+          // getting data/information from JSON
+          const Uni = data.domains[0];
+          let {name} = Uni.name;
+          let { country } = Uni.country;
+          let {CountryCode}= Uni.alpha_two_code;
+          let{website}= Uni.web_pages[0];
+          // getting access to the span container
+          document.querySelector("#name"+i).textContent = UniversityName;
+          document.querySelector("#country"+i).textContent = Country;
+          document.querySelector("#alpha_two_code"+i).textContent = CountryCode;
+          document.querySelector("#web_pages"+i).textContent = website;
+        }
+      }
+      getUser();
+  
+    </script>
+  <br><br><br><br>
+      
+</body>
+    </html>

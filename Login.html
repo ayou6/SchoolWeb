@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <title> W Internatoinal School</title>
         <link rel="stylesheet" type="text/css" href="style.css" />
+       
+    </head>
+    <body>
         <script>
             function validateForm() {
                 var email = document.getElementById("email").value;
@@ -14,7 +18,7 @@
                 }
 
                 if (password == "") {
-                    alert("Password must be filled out");
+                    console.log("Invalid password: password field cannot be empty");
                     return false;
                 }
 
@@ -22,9 +26,6 @@
             }
         </script>
 
-    </head>
-    <body>
-        
         <div class="login">
             <h1>NWI School</h1>    
             <form >
