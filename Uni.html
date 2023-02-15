@@ -87,7 +87,42 @@
 <br><br>    
                  
                 
-   
+   <table align="center" border="1px" style="color: black; width: 55%; text-align: center;" class="domains" id="domains">
+          <tr> <td> # </td> <td> domain</td> </tr> </table>
+              
+ 
+  <script>
+    const api_url = "http://universities.hipolabs.com/search?country=United+States";
+    async function getUser() {
+      for (i = 0; i < 100; i++) {
+        //making a call to API
+        const response = await fetch(api_url);
+        // converting it to JSON format
+        const data = await response.json();
+        // getting data/information from JSON
+        const user = data[i];
+        let domain = user.domains[0];
+
+        let tableR = document.createElement("tr");
+        let cellNo = document.createElement("td");
+        let domNo = document.createElement("td");
+
+        cellNo.textContent = i + 1;
+        domNo.innerHTML = domain;
+
+        tableR.appendChild(cellNo);
+        tableR.appendChild(domNo);
+
+        let tableBody = document.querySelector("tBody");
+        tableBody.appendChild(tableR);
+
+        
+        
+      }
+    }
+    getUser();
+
+  </script>
 
          
       
